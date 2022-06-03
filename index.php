@@ -12,9 +12,16 @@
     
     <form action="handler.php" method="post">
 
-        <label for="input-username">Username</label>
-        <input type="text" name="data-username" id="input-username">
-
+        <label for="input-name">Name: </label>
+        <input type="text" name="data-name" id="input-name" placeholder="Your Name">
+        <br>
+        <label for="input-email">E-mail: </label>
+        <input type="email" name="data-email" id="input-email" placeholder="Your e-mail">
+        <br>
+        <label for="input-message">Message: </label>
+        <br>
+        <textarea name="data-message" id="input-message"></textarea>
+        <br>
         <input type="submit" value="Send">
     </form>
 
