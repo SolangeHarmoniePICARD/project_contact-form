@@ -2,11 +2,8 @@
 
 session_start(); 
 
-$name = $_POST['data-name'];
-$email = $_POST['data-email'];
-$message = $_POST['data-message'];
+$_SESSION['message'] = 'Le nom d\'utilisateur saisi est ' . $_POST['data-username'];
 
-
-echo "$name <br> $email <br> $message ";
+header('Location: index.php');
 
 // EOF
