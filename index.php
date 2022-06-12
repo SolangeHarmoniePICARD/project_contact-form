@@ -12,13 +12,24 @@
 <body>
     
     <form action="handler.php" method="post">
-        <label for="field-name">Nom : </label>
-        <input type="text" name="data-username" id="field-name" placeholder="Votre nom">
+        <label for="field-username">Nom : </label>
+        <input type="text" name="data-username" id="field-username" placeholder="Votre nom">
+        <label for="input-email">Email</label>
+        <input type="text" name="data-email" id="input-email">
+        <label for="input-subject">Subject</label> 
+        <input type="text" name="data-subject" id="input-subject" />
+        <label for="input-message">Message</label> 
+        <textarea name="data-message" id="input-message"></textarea>
         <input type="submit" value="Envoyez">
     </form>
 
     <p>
-        <?= $_SESSION['message']; ?>
+        <?php
+            if($_SESSION){
+                echo $_SESSION['message'] ;
+                $_SESSION['message'] = "";
+            }
+        ?>
     </p>
 
 </body>
