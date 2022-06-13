@@ -14,6 +14,9 @@ if(isset($_POST['data-username']) && !empty($_POST['data-username'])
 
     $mail_recipient  = "s.picard@codeur.online";
     $mail_headers = "From: " . $contact_username . "<". $contact_email .">\r\n";
+
+    require_once('db_connect.php');
+        
     
     if(mail($mail_recipient, $contact_subject, $contact_message, $mail_headers)) {
         $_SESSION['message'] = "Message envoyé !";
