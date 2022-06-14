@@ -12,6 +12,8 @@ if(isset($_POST['data-username']) && !empty($_POST['data-username'])
 	$contact_subject = strip_tags($_POST["data-subject"]);
 	$contact_message = strip_tags($_POST["data-message"]);
 
+    // echo 'Nom : ' . $contact_username . '<br> Email :' . $contact_email . '<br> Sujet :' . $contact_subject . '<br> Message :' . $contact_message ;   
+
     $mail_recipient  = "s.picard@codeur.online";
     $mail_headers = "From: " . $contact_username . "<". $contact_email .">\r\n";
 
