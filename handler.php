@@ -14,27 +14,27 @@ if(isset($_POST['data-username']) && !empty($_POST['data-username'])
 
     echo 'Nom : ' . $contact_username . '<br> Email :' . $contact_email . '<br> Sujet :' . $contact_subject . '<br> Message :' . $contact_message ;   
 
-    // $mail_recipient  = "s.picard@codeur.online";
-    // $mail_headers = "From: " . $contact_username . "<". $contact_email .">\r\n";
+    $mail_recipient  = "s.picard@codeur.online";
+    $mail_headers = "From: " . $contact_username . "<". $contact_email .">\r\n";
 
-    // require_once('db-connect.php');
+    require_once('db-connect.php');
 
-    // $sql = 'INSERT INTO `tbl_contacts` (`contact_username`, `contact_email`, `contact_subject`, `contact_message`) VALUES (:contact_username, :contact_email, :contact_subject, :contact_message)';
-    // $query = $db->prepare($sql);
-    // $query->bindValue(':contact_username', $contact_username, PDO::PARAM_STR);
-    // $query->bindValue(':contact_email', $contact_email, PDO::PARAM_STR);
-    // $query->bindValue(':contact_subject', $contact_subject, PDO::PARAM_STR);
-    // $query->bindValue(':contact_message', $contact_message, PDO::PARAM_STR);
-    // $query->execute();
+    $sql = 'INSERT INTO `tbl_contacts` (`contact_username`, `contact_email`, `contact_subject`, `contact_message`) VALUES (:contact_username, :contact_email, :contact_subject, :contact_message)';
+    $query = $db->prepare($sql);
+    $query->bindValue(':contact_username', $contact_username, PDO::PARAM_STR);
+    $query->bindValue(':contact_email', $contact_email, PDO::PARAM_STR);
+    $query->bindValue(':contact_subject', $contact_subject, PDO::PARAM_STR);
+    $query->bindValue(':contact_message', $contact_message, PDO::PARAM_STR);
+    $query->execute();
         
     
-    // if(mail($mail_recipient, $contact_subject, $contact_message, $mail_headers)) {
-    //     $_SESSION['message'] = "Message envoyé !";
-    // } else {
-    //     $_SESSION['message'] = "Le message n'a pas été envoyé...";
-    // }
+    if(mail($mail_recipient, $contact_subject, $contact_message, $mail_headers)) {
+        $_SESSION['message'] = "Message envoyé !";
+    } else {
+        $_SESSION['message'] = "Le message n'a pas été envoyé...";
+    }
 
-    // header('Location: index.php');
+    header('Location: index.php');
 
 } else {
 
