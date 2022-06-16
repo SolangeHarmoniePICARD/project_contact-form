@@ -32,5 +32,9 @@
         ?>
     </p>
 
+    <div>
+        <a href="view.php"><button>Afficher les messages</button></a>
+    </div>
+
 </body>
 </html>

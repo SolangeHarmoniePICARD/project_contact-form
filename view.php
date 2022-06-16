@@ -1,4 +1,3 @@
-
 <?php
 
 require_once('db-connect.php');
@@ -29,8 +28,6 @@ $contacts = $query->fetchAll(PDO::FETCH_ASSOC);
         <p>Auteur : <?= $contact['contact_username'] ?></p>
         <p>Email : <?= $contact['contact_email'] ?></p>
         <p>Message : <?= $contact['contact_message'] ?></p>
-
-
 
     <?php } ?>
 
