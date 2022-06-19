@@ -9,16 +9,7 @@ $contacts = $query->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="La page d'affiichage des messages du formulaire de contact en PHP/SQL.">
-    <title>Formulaire de Contact - Liste des messages</title>
-</head>
-<body>
+<?php include 'include_header.php'; ?>
     
 <h1>Messages du formulaire de contact</h1>
 
@@ -30,12 +21,10 @@ $contacts = $query->fetchAll(PDO::FETCH_ASSOC);
         <p>Message : <?= $contact['contact_message'] ?></p>
 
     <?php } ?>
-
+    
     <div>
         <a href="index.php"><button>Retour</button></a>
     </div>
 
-</body>
-</html>
-
+    <?php include 'include_footer.php'; ?>
 

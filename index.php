@@ -1,15 +1,4 @@
-<?php session_start(); ?>
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Un formulaire de contact en PHP/SQL.">
-    <title>Formulaire de Contact</title>
-</head>
-<body>
+<?php include 'include_header.php'; ?>
     
     <form action="handler.php" method="post">
         <label for="field-username">Nom : </label>
@@ -23,18 +12,10 @@
         <input type="submit" value="Envoyez">
     </form>
 
-    <p>
-        <?php
-            if($_SESSION){
-                echo $_SESSION['message'] ;
-                $_SESSION['message'] = "";
-            }
-        ?>
-    </p>
-
     <div>
         <a href="view.php"><button>Afficher les messages</button></a>
     </div>
 
-</body>
-</html>
+    <p>
+
+<?php include 'include_footer.php'; ?>
