@@ -12,10 +12,12 @@
         <input type="submit" value="Envoyez">
     </form>
 
-    <div>
-        <a href="view.php"><button>Afficher les messages</button></a>
-    </div>
+    <p>
+        <a href="view_user-registration.php"><button>S'inscrire</button></a>
+    </p>
 
     <p>
+        <a href="view_contact-form-messages.php"><button>Afficher les messages</button></a>
+    </p>
 
 <?php include 'include_footer.php'; ?>

@@ -1,4 +1,4 @@
-<p>
+    <p>
         <?php
             if($_SESSION){
                 echo $_SESSION['message'] ;

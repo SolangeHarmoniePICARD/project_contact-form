@@ -1,5 +1,5 @@
 <?php
-include('db-env.php');
+include('db_env.php');
 try {
   $db = new PDO("mysql:host=$db_servername;dbname=$db_dbname", $db_username, $db_password);
   // set the PDO error mode to exception

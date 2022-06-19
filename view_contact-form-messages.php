@@ -1,6 +1,6 @@
 <?php
 
-require_once('db-connect.php');
+require_once('db_connect.php');
 
 $sql = 'SELECT * FROM `tbl_contacts`';
 $query = $db->prepare($sql);

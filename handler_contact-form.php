@@ -17,7 +17,7 @@ if(isset($_POST['data-username']) && !empty($_POST['data-username'])
     $mail_recipient  = "s.picard@codeur.online";
     $mail_headers = "From: " . $contact_username . "<". $contact_email .">\r\n";
 
-    require_once('db-connect.php');
+    require_once('db_connect.php');
 
     $sql = 'INSERT INTO `tbl_contacts` (`contact_username`, `contact_email`, `contact_subject`, `contact_message`) VALUES (:contact_username, :contact_email, :contact_subject, :contact_message)';
     $query = $db->prepare($sql);
