@@ -1,5 +1,16 @@
 <?php
 
+// if($_SESSION['username']){
+
+//     echo 'User: ' . $_SESSION['username'] ;
+
+// } else {
+
+//     $_SESSION['message'] = 'You are not connected! Please log in!';
+//     header('Location: view_user-login.php'); 
+
+// }
+
 require_once('db_connect.php');
 
 $sql = 'SELECT * FROM `tbl_contacts`';
