@@ -1,15 +1,17 @@
+<?php include 'include_header.php'; ?>
+
 <?php
 
-// if($_SESSION['username']){
+if($_SESSION['username']){
 
-//     echo 'User: ' . $_SESSION['username'] ;
+    echo 'User: ' . $_SESSION['username'] ;
 
-// } else {
+} else {
 
-//     $_SESSION['message'] = 'You are not connected! Please log in!';
-//     header('Location: view_user-login.php'); 
+    $_SESSION['message'] = 'You are not connected! Please log in!';
+    header('Location: view_user-login.php'); 
 
-// }
+}
 
 require_once('db_connect.php');
 
@@ -19,8 +21,6 @@ $query->execute();
 $contacts = $query->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-
-<?php include 'include_header.php'; ?>
     
 <h1>Messages du formulaire de contact</h1>
 
