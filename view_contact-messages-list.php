@@ -37,6 +37,7 @@ $contacts = $query->fetchAll(PDO::FETCH_ASSOC);
     
     <div>
         <a href="index.php"><button>Retour</button></a>
+        <a href="handler_user-logout.php"><button>Se déconnecter</button></a>
     </div>
 
 <?php include 'include_footer.php'; ?>
