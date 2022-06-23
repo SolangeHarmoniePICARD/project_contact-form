@@ -18,7 +18,7 @@
     </p>
 
     <p>
-        <a href="view_contact-form-messages.php"><button>Afficher les messages</button></a>
+        <a href="view_contact-messages-list.php"><button>Afficher les messages</button></a>
     </p>
 
 <?php include 'include_footer.php'; ?>

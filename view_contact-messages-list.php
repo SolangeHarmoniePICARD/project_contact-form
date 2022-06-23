@@ -26,10 +26,12 @@ $contacts = $query->fetchAll(PDO::FETCH_ASSOC);
 
     <?php foreach($contacts as $contact){ ?>
         
-        <h2><?= $contact['contact_subject'] ?></h2>
-        <p>Auteur : <?= $contact['contact_username'] ?></p>
-        <p>Email : <?= $contact['contact_email'] ?></p>
-        <p>Message : <?= $contact['contact_message'] ?></p>
+        <h2>
+            <a href="view_contact-message-single.php?contact_id=<?= $contact['contact_id'] ?>"> 
+            <?= $contact['contact_subject'] ?>
+        </a>
+        </h2>
+
 
     <?php } ?>
     
@@ -37,5 +39,5 @@ $contacts = $query->fetchAll(PDO::FETCH_ASSOC);
         <a href="index.php"><button>Retour</button></a>
     </div>
 
-    <?php include 'include_footer.php'; ?>
+<?php include 'include_footer.php'; ?>
 

@@ -20,7 +20,7 @@ if(isset($_POST['data-username']) && !empty($_POST['data-username'])
             $_SESSION['id'] = $result['user_id'];
             $_SESSION['username'] = $result['user_username'];
             $_SESSION['message'] = 'Connexion réussie !';
-            header('Location: view_contact-form-messages.php');
+            header('Location: view_contact-messages-list.php');
 
         }else{
 
