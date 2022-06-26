@@ -8,7 +8,7 @@ if($_SESSION['username']){
 
 } else {
 
-    $_SESSION['message'] = 'You are not connected! Please log in!';
+    $_SESSION['message'] = 'Vous n\'êtes pas connecté !';
     header('Location: view_user-login.php'); 
 
 }
