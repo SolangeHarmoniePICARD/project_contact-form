@@ -13,12 +13,15 @@
     </form>
 
     <p>
-        <a href="view_user-registration.php"><button>S'inscrire</button></a>
-        <a href="view_user-login.php"><button>Se connecter</button></a>
+        <?php 
+            if(!isset($_SESSION['username'])){
+                echo '<a href="view_user-registration.php"><button>S\'inscrire</button></a>';
+                echo '<a href="view_user-login.php"><button>Se connecter</button></a>';
+            } else {
+                echo ' <a href="view_contact-messages-list.php"><button>Afficher les messages</button></a>';
+            }
+        ?>
     </p>
 
-    <p>
-        <a href="view_contact-messages-list.php"><button>Afficher les messages</button></a>
-    </p>
 
 <?php include 'include_footer.php'; ?>
