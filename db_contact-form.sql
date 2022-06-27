@@ -25,5 +25,14 @@ CREATE TABLE `tbl_users` (
   UNIQUE KEY `user_email` (`user_email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `tbl_tokens`;
+CREATE TABLE `tbl_tokens` (
+  `token_id` int(11) NOT NULL AUTO_INCREMENT,
+  `token_string` varchar(255) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`token_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `tbl_tokens_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `tbl_users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 2022-06-19 20:13:20
