@@ -35,4 +35,5 @@ session_start();
         header('Location: view_user-registration.php'); 
     }
 
+
 ?>

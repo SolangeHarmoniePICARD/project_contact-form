@@ -22,7 +22,7 @@ if (isset($_GET['contact_id']) && !empty($_GET['contact_id'])) {
         $_SESSION['message'] = 'This ID doesn\'t exist.';
         header('Location: view_contact-messages-list.php'); 
     }
-
+##
 } else {
 
     $_SESSION['message'] = 'URL is not valid...';

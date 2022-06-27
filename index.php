@@ -1,4 +1,4 @@
-<?php include 'include_header.php'; ?>
+<?php include 'include_header.php';?>
     
     <form action="handler.php" method="post">
         <label for="field-username">Nom : </label>

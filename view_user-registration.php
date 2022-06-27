@@ -27,5 +27,10 @@
         </div>
 
     </form>
+    <p>
+        <a href="index.php">
+            <button>Retour</button>
+        </a>
+    </p>
 
 <?php include 'include_footer.php'; ?>
