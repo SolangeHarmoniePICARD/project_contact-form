@@ -29,7 +29,7 @@ if (isset($_SESSION['username'])) {
         </div>
         <div>
             <input type="submit" value="Se connecter">
-            <a href="test.php">Mot de passe oublié ?</a>
+            <a href="view_pswd-reset-link.php">Mot de passe oublié ?</a>
         </div>
        
     </form>
