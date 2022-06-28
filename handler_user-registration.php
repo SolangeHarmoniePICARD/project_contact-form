@@ -2,6 +2,7 @@
 
 session_start();
 
+if ($_SESSION["submit-captcha"] == $_POST["data-captcha"]) {
   if(isset($_POST['data-username']) && !empty($_POST['data-username']) 
     && isset($_POST['data-email']) && !empty($_POST['data-email']) 
     && isset($_POST['data-password']) && !empty($_POST['data-password']) 
@@ -34,6 +35,9 @@ session_start();
         $_SESSION['message'] = 'Completez tous les champs !';
         header('Location: view_user-registration.php'); 
     }
-
+} else {
+    $_SESSION['message'] = "Vous êtes un robot ?!";
+    header('Location: view_user-registration.php'); 
+}
 
 ?>

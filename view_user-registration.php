@@ -23,6 +23,11 @@
         </div>
 
         <div>
+            <label for="input-captcha">Captcha :</label>
+            <input type="text" id="input-captcha" name="data-captcha" maxlength="5" autocomplete="off" required> &nbsp; <img src="include_captcha-generator.php" alt="captcha">
+        </div>
+
+        <div>
             <input type="submit" id="form_submit" value="S'inscrire">
         </div>
 
