@@ -36,11 +36,24 @@ if (isset($_GET['contact_id']) && !empty($_GET['contact_id'])) {
 <p>Auteur : <?= $contact['contact_username'] ?></p>
 <p>Email : <?= $contact['contact_email'] ?></p>
 <p>Message : <?= $contact['contact_message'] ?></p>
-
-<a href="view_contact-messages-list.php">
-    <button>
-        Retour
+<p>
+    <button id="button-reply">
+        Répondre
     </button>
-</a>
+    <form action="handler_reply-contact-message.php" method="post" id="form-reply" style="display:none">
+        <label for="input-reply">Votre réponse :</label>
+        <textarea id="input-reply" name="data-reply"></textarea>
+        <input type="hidden" name="data-email" value="<?= $contact['contact_email'] ?>">
+        <input type="submit" value="Envoyer">
+    </form>
+</p>
+<p>
+    <a href="view_contact-messages-list.php">
+        <button>
+            Retour
+        </button>
+    </a>
+</p>
 
+<script src="script_reply-contact-message.js"></script>
 <?php include 'include_footer.php'; ?>
