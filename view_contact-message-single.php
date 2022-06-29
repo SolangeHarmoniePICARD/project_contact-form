@@ -41,10 +41,17 @@ if (isset($_GET['contact_id']) && !empty($_GET['contact_id'])) {
         Répondre
     </button>
     <form action="handler_reply-contact-message.php" method="post" id="form-reply" style="display:none">
-        <label for="input-reply">Votre réponse :</label>
-        <textarea id="input-reply" name="data-reply"></textarea>
+        <p>
+            <label for="input-reply">Votre réponse :</label>
+        </p>
+        <p>
+            <textarea id="input-reply" name="data-reply"></textarea>
+        </p>
+        <p>
         <input type="hidden" name="data-email" value="<?= $contact['contact_email'] ?>">
-        <input type="submit" value="Envoyer">
+            <input type="hidden" name="data-subject" value="<?= $contact['contact_subject'] ?>">
+            <input type="submit" value="Envoyer">
+        </p>
     </form>
 </p>
 <p>
