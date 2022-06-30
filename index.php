@@ -11,7 +11,7 @@
 ?>
 <?php include 'include_header.php';?>
     
-    <form action="handler.php" method="post">
+    <form action="handler_contact-form.php" method="post">
         <label for="field-username">Nom : </label>
         <input type="text" name="data-username" id="field-username" placeholder="Votre nom">
         <label for="input-email">Email</label>
