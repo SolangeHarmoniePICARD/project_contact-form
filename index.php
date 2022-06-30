@@ -1,3 +1,14 @@
+<?php
+
+    require_once('db_connect.php');
+
+    $sql = 'SELECT * FROM `tbl_users`';
+    $query = $db->prepare($sql);
+    $query->execute();
+    $users = $query->fetchAll(PDO::FETCH_ASSOC);
+    // var_dump($users);
+    
+?>
 <?php include 'include_header.php';?>
     
     <form action="handler.php" method="post">
@@ -14,8 +25,9 @@
 
     <p>
         <?php 
-            if(!isset($_SESSION['username'])){
+            if (!$users) {
                 echo '<a href="view_user-registration.php"><button>S\'inscrire</button></a>';
+            } else if(!isset($_SESSION['username'])){
                 echo '<a href="view_user-login.php"><button>Se connecter</button></a>';
             } else {
                 echo ' <a href="view_contact-messages-list.php"><button>Afficher les messages</button></a>';

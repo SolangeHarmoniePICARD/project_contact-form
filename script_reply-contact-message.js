@@ -1,4 +1,7 @@
-document.getElementById('button-reply').addEventListener('click', function(){
-    document.getElementById('button-reply').style.display = "none";
-    document.getElementById('form-reply').style.display = "block";
+let buttonReply = document.getElementById('button-reply')
+    formReply = document.getElementById('form-reply')
+
+buttonReply.addEventListener('click', function(){
+    buttonReply.style.display = "none"
+    formReply.style.display = "block"
 })

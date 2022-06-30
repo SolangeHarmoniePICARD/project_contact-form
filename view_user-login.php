@@ -5,16 +5,7 @@
 if (isset($_SESSION['username'])) {
     $_SESSION['message'] = 'Vous êtes déjà connecté !';
     header('Location: view_contact-messages-list.php'); 
-} else {
-
-    require_once('db_connect.php');
-
-    $sql = 'SELECT * FROM `tbl_contacts`';
-    $query = $db->prepare($sql);
-    $query->execute();
-    $contacts = $query->fetchAll(PDO::FETCH_ASSOC);
-    
-}
+} 
 
 ?>
 
