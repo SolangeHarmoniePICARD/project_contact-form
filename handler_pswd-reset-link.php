@@ -14,6 +14,7 @@ if(!$result){
     header('Location: index.php'); 
 
 } else {
+
     $user_id = $result['user_id'];
     $token_string = md5(rand());
 
@@ -25,14 +26,19 @@ if(!$result){
     $query->execute();
 
     $user_email = $result['user_email'];
+    $user_information = $result['user_username'] . '<' . $result['user_email'] . '>';
 
     $user_link = "http://localhost/feature_contact-form/handler_check-token.php?user-email=" . $user_email . "&token-string=" . $token_string ;
-    $email_headers = "From: " . "s.picard@codeur.online" . "<" .  $user_email . ">\r\n";
-    if(mail($user_email, 'Réinitialisez votre mot de passe', "Cliquez pour modifier votre mot de passe: " . $user_link, $email_headers)) {
+    $email_headers = "From: Solange Harmonie PICARD <s.picard@codeur.online>\r\n";
+    $email_headers .= 'MIME-Version: 1.0' . "\r\n";
+    $email_headers .= 'Content-Type: text/html; charset=utf-8' . "\r\n";
+
+    if(mail($user_information, 'Réinitialisez votre mot de passe', "Cliquez pour modifier votre mot de passe: <a href=" . $user_link .">" .  $user_link . "</a>" , $email_headers)) {
         $_SESSION['message'] = "Consultez votre boîte mail pour réinitialiser votre mot de passe.";
     } else {
         $_SESSION['message'] = "Il semblerait que quelque chose n'ait pas fonctionné...";
 	}
 
-    header('Location: index.php');  
+    header('Location: index.php');
+
 }

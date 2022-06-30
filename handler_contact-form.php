@@ -10,17 +10,17 @@ if(isset($_POST['data-username']) && !empty($_POST['data-username'])
     $contact_username = strip_tags($_POST["data-username"]);
 	$contact_email = strip_tags($_POST["data-email"]);
 
-	$mail_subject = strip_tags($_POST["data-subject"]);
-	$mail_message = strip_tags($_POST["data-message"]);
+	$email_subject = strip_tags($_POST["data-subject"]);
+	$email_message = strip_tags($_POST["data-message"]);
 
-    // echo 'Nom : ' . $contact_username . '<br> Email :' . $contact_email . '<br> Sujet :' . $mail_subject . '<br> Message :' . $mail_message ;   
+    // echo 'Nom : ' . $contact_username . '<br> Email :' . $contact_email . '<br> Sujet :' . $email_subject . '<br> Message :' . $email_message ;   
 
-    $mail_recipient  = "Solange Harmonie PICARD <s.picard@codeur.online>";
-    $mail_headers = "From: " . $contact_username . "<". $contact_email .">\r\n";
-    $mail_headers .= 'MIME-Version: 1.0' . "\r\n";
-    $mail_headers .= 'Content-Type: text/plain; charset=utf-8' . "\r\n";
+    $email_recipient  = "Solange Harmonie PICARD <s.picard@codeur.online>";
+    $email_headers = "From: " . $contact_username . "<". $contact_email .">\r\n";
+    $email_headers .= 'MIME-Version: 1.0' . "\r\n";
+    $email_headers .= 'Content-Type: text/html; charset=utf-8' . "\r\n";
 
-    if(mail($mail_recipient, $mail_subject, $mail_message, $mail_headers)) {
+    if(mail($email_recipient, $email_subject, $email_message, $email_headers)) {
         $_SESSION['message'] = "Message envoyé !";
     } else {
         $_SESSION['message'] = "Le message n'a pas été envoyé...";
@@ -32,8 +32,8 @@ if(isset($_POST['data-username']) && !empty($_POST['data-username'])
     $query = $db->prepare($sql);
     $query->bindValue(':contact_username', $contact_username, PDO::PARAM_STR);
     $query->bindValue(':contact_email', $contact_email, PDO::PARAM_STR);
-    $query->bindValue(':contact_subject', $mail_subject, PDO::PARAM_STR);
-    $query->bindValue(':contact_message', $mail_message, PDO::PARAM_STR);
+    $query->bindValue(':contact_subject', $email_subject, PDO::PARAM_STR);
+    $query->bindValue(':contact_message', $email_message, PDO::PARAM_STR);
     $query->execute();
 
     header('Location: index.php');
