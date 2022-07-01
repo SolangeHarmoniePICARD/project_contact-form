@@ -55,6 +55,15 @@ if (isset($_GET['contact_id']) && !empty($_GET['contact_id'])) {
         </p>
     </form>
 </p>
+
+<p>
+    <a href="handler_delete-message.php?message_id=<?= $contact['contact_id'] ?>">
+        <button>
+            Supprimer le message
+        </button>
+    </a>
+</p>
+
 <p>
     <a href="view_contact-messages-list.php">
         <button>

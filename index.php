@@ -30,7 +30,8 @@
             } else if(!isset($_SESSION['username'])){
                 echo '<a href="view_user-login.php"><button>Se connecter</button></a>';
             } else {
-                echo ' <a href="view_contact-messages-list.php"><button>Afficher les messages</button></a>';
+                echo '<a href="view_contact-messages-list.php"><button>Afficher les messages</button></a>';
+                echo '<a href="handler_user-logout.php"><button>Se déconnecter</button></a>';
             }
         ?>
     </p>
