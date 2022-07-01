@@ -27,8 +27,7 @@ $contacts = $query->fetchAll(PDO::FETCH_ASSOC);
     <?php foreach($contacts as $contact){ ?>
         
         <h2>
-            <a href="view_contact-message-single.php?contact_id=<?= $contact['contact_id'] ?>"> 
-            <?= $contact['contact_subject'] ?>
+            <a href="view_contact-message-single.php?contact_id=<?= $contact['contact_id'] ?>"> <button>Voir : <strong><?= $contact['contact_subject'] ?></strong></button>||<a href="handler_delete-message.php?message_id=<?= $contact['contact_id'] ?>"><button><small>Supprimer le message</small></button></a>
         </a>
         </h2>
 
