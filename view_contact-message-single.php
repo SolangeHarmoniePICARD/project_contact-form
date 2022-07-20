@@ -19,13 +19,13 @@ if (isset($_GET['contact_id']) && !empty($_GET['contact_id'])) {
     //print_r($contact);
 
     if (!$contact) {
-        $_SESSION['message'] = 'This ID doesn\'t exist.';
+        $_SESSION['message'] = 'Cette ID n\'existe pas.';
         header('Location: view_contact-messages-list.php'); 
     }
 ##
 } else {
 
-    $_SESSION['message'] = 'URL is not valid...';
+    $_SESSION['message'] = 'L\'URL n\'est pas valide...';
     header('Location: view_contact-messages-list.php'); 
 
 }
