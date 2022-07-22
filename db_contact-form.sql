@@ -12,6 +12,7 @@ CREATE TABLE `tbl_contacts` (
   `contact_email` varchar(255) NOT NULL,
   `contact_subject` varchar(255) NOT NULL,
   `contact_message` text NOT NULL,
+  `contact_reply` text DEFAULT NULL,
   PRIMARY KEY (`contact_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -35,4 +36,4 @@ CREATE TABLE `tbl_tokens` (
   CONSTRAINT `tbl_tokens_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `tbl_users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- 2022-06-19 20:13:20
+-- 2022-07-22 17:25:23
