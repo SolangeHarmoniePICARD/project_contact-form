@@ -37,9 +37,17 @@ if (isset($_GET['contact_id']) && !empty($_GET['contact_id'])) {
 <p>Email : <?= $contact['contact_email'] ?></p>
 <p>Message : <?= $contact['contact_message'] ?></p>
 <p>
-    <button id="button-reply">
-        Répondre
-    </button>
+
+<?php 
+
+    if ($contact['contact_reply'] == NULL) {
+        echo 'Vous n\'avez pas encore répondu à ce message. <br> <button id="button-reply">Répondre</button>' ;
+    } else {
+        echo 'Vous avez répondu : « ' . $contact['contact_reply'] . ' » à ce message.' ;
+    }
+
+?>
+
     <form action="handler_reply-contact-message.php" method="post" id="form-reply" style="display:none">
         <p>
             <label for="input-reply">Votre réponse :</label>
