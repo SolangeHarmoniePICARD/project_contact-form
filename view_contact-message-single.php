@@ -48,7 +48,8 @@ if (isset($_GET['contact_id']) && !empty($_GET['contact_id'])) {
             <textarea id="input-reply" name="data-reply"></textarea>
         </p>
         <p>
-        <input type="hidden" name="data-email" value="<?= $contact['contact_email'] ?>">
+            <input type="hidden" name="data-id" value="<?= $contact['contact_id'] ?>">
+            <input type="hidden" name="data-email" value="<?= $contact['contact_email'] ?>">
             <input type="hidden" name="data-username" value="<?= $contact['contact_username'] ?>">
             <input type="hidden" name="data-subject" value="<?= $contact['contact_subject'] ?>">
             <input type="submit" value="Envoyer">
