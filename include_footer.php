@@ -1,6 +1,6 @@
     <p>
         <?php
-            if($_SESSION){
+            if($_SESSION['message']){
                 echo $_SESSION['message'] ;
                 $_SESSION['message'] = "";
             }
