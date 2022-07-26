@@ -35,15 +35,16 @@ if (isset($_GET['contact_id']) && !empty($_GET['contact_id'])) {
 <h1> <?= $contact['contact_subject'] ?> </h1>
 <p>Auteur : <?= $contact['contact_username'] ?></p>
 <p>Email : <?= $contact['contact_email'] ?></p>
+<p>Date : <?= $contact['contact_sended'] ?></p>
 <p>Message : <?= $contact['contact_message'] ?></p>
-<p>
+
 
 <?php 
 
     if ($contact['contact_reply'] == NULL) {
         echo 'Vous n\'avez pas encore répondu à ce message. <br> <button id="button-reply">Répondre</button>' ;
     } else {
-        echo 'Vous avez répondu : « ' . $contact['contact_reply'] . ' » à ce message.' ;
+        echo 'Vous avez répondu : « ' . $contact['contact_reply'] . ' » à ce message le ' . $contact['contact_replied'] . '.';
     }
 
 ?>

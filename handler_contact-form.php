@@ -11,7 +11,7 @@ if ($_SESSION["submit-captcha"] == $_POST["data-captcha"]) {
 
         $contact_username = strip_tags($_POST["data-username"]);
         $contact_email = strip_tags($_POST["data-email"]);
-        $contact_timestamp =  date("Y-m-d H:i:s");;
+        $contact_sended =  date("Y-m-d H:i:s");
 
         $email_subject = strip_tags($_POST["data-subject"]);
         $email_message = strip_tags($_POST["data-message"]);
@@ -31,13 +31,13 @@ if ($_SESSION["submit-captcha"] == $_POST["data-captcha"]) {
 
         require_once('db_connect.php');
 
-        $sql = 'INSERT INTO `tbl_contacts` (`contact_username`, `contact_email`, `contact_subject`, `contact_message`, `contact_timestamp`) VALUES (:contact_username, :contact_email, :contact_subject, :contact_message, :contact_timestamp)';
+        $sql = 'INSERT INTO `tbl_contacts` (`contact_username`, `contact_email`, `contact_subject`, `contact_message`, `contact_sended`) VALUES (:contact_username, :contact_email, :contact_subject, :contact_message, :contact_sended)';
         $query = $db->prepare($sql);
         $query->bindValue(':contact_username', $contact_username, PDO::PARAM_STR);
         $query->bindValue(':contact_email', $contact_email, PDO::PARAM_STR);
         $query->bindValue(':contact_subject', $email_subject, PDO::PARAM_STR);
         $query->bindValue(':contact_message', $email_message, PDO::PARAM_STR);
-        $query->bindValue(':contact_timestamp', $contact_timestamp, PDO::PARAM_STR);
+        $query->bindValue(':contact_sended', $contact_sended, PDO::PARAM_STR);
         $query->execute();
 
         header('Location: index.php');

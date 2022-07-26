@@ -12,6 +12,7 @@ if( isset($_POST['data-id']) && !empty($_POST['data-id'])
     $contact_username = strip_tags($_POST['data-username']) ;
     $contact_email = strip_tags($_POST['data-email']) ;
     $contact_information = $contact_username . '<' . $contact_email .'>' ;
+    $contact_replied = date("Y-m-d H:i:s");
 
     $email_subject = strip_tags($_POST['data-subject']) ;
     $email_reply = strip_tags($_POST['data-reply']) ;
@@ -27,10 +28,11 @@ if( isset($_POST['data-id']) && !empty($_POST['data-id'])
 
         require_once('db_connect.php');
 
-        $sql = 'UPDATE `tbl_contacts` SET `contact_reply`=:contact_reply WHERE `contact_id`=:contact_id';
+        $sql = 'UPDATE `tbl_contacts` SET `contact_reply`=:contact_reply, `contact_replied`=:contact_replied WHERE `contact_id`=:contact_id';
         $query = $db->prepare($sql);
         $query->bindValue(':contact_id', $contact_id, PDO::PARAM_STR);
         $query->bindValue(':contact_reply', $email_reply, PDO::PARAM_STR);
+        $query->bindValue(':contact_replied', $contact_replied, PDO::PARAM_STR);
         $query->execute();
 
     header('Location: view_contact-messages-list.php');  
